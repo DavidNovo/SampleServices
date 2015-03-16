@@ -1,0 +1,3 @@
+@javax.xml.bind.annotation.XmlSchema(xmlns={@javax.xml.bind.annotation.XmlNs(prefix="sd",namespaceURI="http://www.springframework.org/schema/data/jaxb")})
+@javax.xml.bind.annotation.adapters.XmlJavaTypeAdapters(value={@javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter(value=org.springframework.data.domain.jaxb.PageableAdapter.class,type=org.springframework.data.domain.Pageable.class),@javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter(value=org.springframework.data.domain.jaxb.SortAdapter.class,type=org.springframework.data.domain.Sort.class),@javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter(value=org.springframework.data.domain.jaxb.PageAdapter.class,type=org.springframework.data.domain.Page.class)})
+package org.springframework.data.domain.jaxb;

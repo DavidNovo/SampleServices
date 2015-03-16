@@ -1,0 +1,2 @@
+@javax.xml.bind.annotation.XmlSchema(namespace="http://java.sun.com/xml/ns/persistence/orm",elementFormDefault=javax.xml.bind.annotation.XmlNsForm.QUALIFIED)
+package org.hibernate.internal.jaxb.mapping.orm;

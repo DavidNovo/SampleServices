@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:jaxrs="http://cxf.apache.org/jaxrs"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://cxf.apache.org/jaxrs http://cxf.apache.org/schemas/jaxrs.xsd">
+
+  <jaxrs:server id="jaxrs">
+    <jaxrs:serviceBeans>
+      <bean class="org.codehaus.enunciate.modules.spring_app.ServiceEndpointFactoryBean">
+        <constructor-arg value="org.appfuse.service.UserService"/>
+        <property name="defaultImplementationBeanName" value="UserServiceEndpointBean"/>
+        <property name="interceptors" ref="service-bean-interceptors"/>
+      </bean>
+    </jaxrs:serviceBeans>
+    <jaxrs:providers>
+      <bean class="org.apache.cxf.jaxrs.provider.JAXBElementProvider"/>
+      <bean class="org.codehaus.jackson.jaxrs.JacksonJaxbJsonProvider"/>
+    </jaxrs:providers>
+    <jaxrs:extensionMappings>
+        <entry key="json" value="application/json"/>
+        <entry key="xml" value="application/xml"/>
+    </jaxrs:extensionMappings>
+  </jaxrs:server>
+</beans>

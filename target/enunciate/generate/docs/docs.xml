@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api-docs title="AppFuse Web Services Application">
+  <data>
+    <schema namespace="" namespaceId="ns0" file="ns0.xsd">
+      <types>
+        <type name="address" id="org.appfuse.model.Address" package="org.appfuse.model" extendsType="org.appfuse.model.BaseObject">
+          <facets>
+          </facets>
+          <elements>
+            <element minOccurs="0" maxOccurs="1" jsonName="province">
+              <choice name="province" namespace="" typeNamespace="http://www.w3.org/2001/XMLSchema" typeName="string"/>
+            </element>
+            <element minOccurs="0" maxOccurs="1" jsonName="postalCode">
+              <choice name="postalCode" namespace="" typeNamespace="http://www.w3.org/2001/XMLSchema" typeName="string"/>
+            </element>
+            <element minOccurs="0" maxOccurs="1" jsonName="country">
+              <choice name="country" namespace="" typeNamespace="http://www.w3.org/2001/XMLSchema" typeName="string"/>
+            </element>
+            <element minOccurs="0" maxOccurs="1" jsonName="city">
+              <choice name="city" namespace="" typeNamespace="http://www.w3.org/2001/XMLSchema" typeName="string"/>
+            </element>
+            <element minOccurs="0" maxOccurs="1" jsonName="address">
+              <choice name="address" namespace="" typeNamespace="http://www.w3.org/2001/XMLSchema" typeName="string"/>
+            </element>
+          </elements>
+        </type>
+        <type name="baseObject" id="org.appfuse.model.BaseObject" package="org.appfuse.model">
+          <facets>
+          </facets>
+        </type>
+        <type name="role" id="org.appfuse.model.Role" package="org.appfuse.model" extendsType="org.appfuse.model.BaseObject">
+          <facets>
+          </facets>
+          <elements>
+            <element minOccurs="0" maxOccurs="1" jsonName="description">
+              <choice name="description" namespace="" typeNamespace="http://www.w3.org/2001/XMLSchema" typeName="string"/>
+            </element>
+            <element minOccurs="0" maxOccurs="1" jsonName="name">
+              <choice name="name" namespace="" typeNamespace="http://www.w3.org/2001/XMLSchema" typeName="string"/>
+            </element>
+            <element minOccurs="0" maxOccurs="1" jsonName="id">
+              <choice name="id" namespace="" typeNamespace="http://www.w3.org/2001/XMLSchema" typeName="long"/>
+            </element>
+          </elements>
+        </type>
+        <type name="user" id="org.appfuse.model.User" package="org.appfuse.model" extendsType="org.appfuse.model.BaseObject">
+          <facets>
+          </facets>
+          <elements>
+            <element minOccurs="0" maxOccurs="1" jsonName="version">
+              <choice name="version" namespace="" typeNamespace="http://www.w3.org/2001/XMLSchema" typeName="int"/>
+            </element>
+            <element minOccurs="1" maxOccurs="1" jsonName="accountLocked">
+              <choice name="accountLocked" namespace="" typeNamespace="http://www.w3.org/2001/XMLSchema" typeName="boolean"/>
+            </element>
+            <element minOccurs="0" maxOccurs="1" jsonName="phoneNumber">
+              <choice name="phoneNumber" namespace="" typeNamespace="http://www.w3.org/2001/XMLSchema" typeName="string"/>
+            </element>
+            <element minOccurs="0" maxOccurs="1" jsonName="firstName">
+              <choice name="firstName" namespace="" typeNamespace="http://www.w3.org/2001/XMLSchema" typeName="string"/>
+            </element>
+            <element minOccurs="0" maxOccurs="1" jsonName="lastName">
+              <choice name="lastName" namespace="" typeNamespace="http://www.w3.org/2001/XMLSchema" typeName="string"/>
+            </element>
+            <element minOccurs="0" maxOccurs="1" jsonName="username">
+              <choice name="username" namespace="" typeNamespace="http://www.w3.org/2001/XMLSchema" typeName="string"/>
+            </element>
+            <element minOccurs="1" maxOccurs="1" jsonName="credentialsExpired">
+              <choice name="credentialsExpired" namespace="" typeNamespace="http://www.w3.org/2001/XMLSchema" typeName="boolean"/>
+            </element>
+            <element minOccurs="0" maxOccurs="1" jsonName="address">
+              <choice name="address" namespace="" typeNamespace="" typeName="address" typeSchemaId="ns0"/>
+            </element>
+            <element minOccurs="1" maxOccurs="1" jsonName="accountExpired">
+              <choice name="accountExpired" namespace="" typeNamespace="http://www.w3.org/2001/XMLSchema" typeName="boolean"/>
+            </element>
+            <element minOccurs="1" maxOccurs="1" jsonName="enabled">
+              <choice name="enabled" namespace="" typeNamespace="http://www.w3.org/2001/XMLSchema" typeName="boolean"/>
+            </element>
+            <element minOccurs="0" maxOccurs="1" jsonName="email">
+              <choice name="email" namespace="" typeNamespace="http://www.w3.org/2001/XMLSchema" typeName="string"/>
+            </element>
+            <element minOccurs="0" maxOccurs="1" jsonName="id">
+              <choice name="id" namespace="" typeNamespace="http://www.w3.org/2001/XMLSchema" typeName="long"/>
+            </element>
+            <element minOccurs="0" maxOccurs="1" jsonName="website">
+              <choice name="website" namespace="" typeNamespace="http://www.w3.org/2001/XMLSchema" typeName="string"/>
+            </element>
+            <element minOccurs="0" maxOccurs="unbounded" jsonName="roles">
+              <choice name="roles" namespace="" typeNamespace="" typeName="role" typeSchemaId="ns0"/>
+            </element>
+          </elements>
+        </type>
+      </types>
+      <elements>
+        <element name="user" type="org.appfuse.model.User" typeName="user" typeNamespace="" typeSchemaId="ns0">
+          <facets>
+          </facets>
+          <examplexml><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<user>
+  <version>...</version>
+  <accountLocked>...</accountLocked>
+  <phoneNumber>...</phoneNumber>
+  <firstName>...</firstName>
+  <lastName>...</lastName>
+  <username>...</username>
+  <credentialsExpired>...</credentialsExpired>
+  <address>
+    <province>...</province>
+    <postalCode>...</postalCode>
+    <country>...</country>
+    <city>...</city>
+    <address>...</address>
+  </address>
+  <accountExpired>...</accountExpired>
+  <enabled>...</enabled>
+  <email>...</email>
+  <id>...</id>
+  <website>...</website>
+  <roles>
+    <description>...</description>
+    <name>...</name>
+    <id>...</id>
+  </roles>
+  <roles>
+    <!--...-->
+  </roles>
+  <!--...more "roles" elements...-->
+</user>]]></examplexml>
+          <examplejson><![CDATA[{
+  "version" : ...,
+  "accountLocked" : false,
+  "phoneNumber" : "...",
+  "firstName" : "...",
+  "lastName" : "...",
+  "username" : "...",
+  "credentialsExpired" : false,
+  "address" : {
+    "province" : "...",
+    "postalCode" : "...",
+    "country" : "...",
+    "city" : "...",
+    "address" : "..."
+  },
+  "accountExpired" : false,
+  "enabled" : false,
+  "email" : "...",
+  "id" : ...,
+  "website" : "...",
+  "roles" : [ {
+    "description" : "...",
+    "name" : "...",
+    "id" : ...
+  }, ... ]
+}]]></examplejson>
+        </element>
+      </elements>
+      <facets>
+      </facets>
+    </schema>
+  </data>
+  <soap>
+    <wsdls>
+      <wsdl namespace="http://service.appfuse.org/" namespaceId="ns1" file="ns1.wsdl">
+        <endpointInterface name="UserService" id="org.appfuse.service.UserService" package="org.appfuse.service" path="/services/UserService">
+          <facets>
+          </facets>
+          <method name="getUser" oneWay="false">
+            <parameter name="arg0" input="true" output="false" xmlTypeName="string" xmlTypeNamespace="http://www.w3.org/2001/XMLSchema">
+              <![CDATA[(no documentation provided)]]>
+            </parameter>
+            <result xmlTypeName="user" xmlTypeNamespace="" xmlTypeSchemaId="ns0">
+              <![CDATA[(no documentation provided)]]>
+            </result>
+          </method>
+          <method name="getUserByUsername" oneWay="false">
+            <parameter name="arg0" input="true" output="false" xmlTypeName="string" xmlTypeNamespace="http://www.w3.org/2001/XMLSchema">
+              <![CDATA[(no documentation provided)]]>
+            </parameter>
+            <result xmlTypeName="user" xmlTypeNamespace="" xmlTypeSchemaId="ns0">
+              <![CDATA[(no documentation provided)]]>
+            </result>
+          </method>
+          <method name="getUsers" oneWay="false">
+            <result xmlTypeName="user" xmlTypeNamespace="" xmlTypeSchemaId="ns0">
+              <![CDATA[(no documentation provided)]]>
+            </result>
+          </method>
+          <method name="saveUser" oneWay="false">
+            <parameter name="arg0" input="true" output="false" xmlTypeName="user" xmlTypeNamespace="" xmlTypeSchemaId="ns0">
+              <![CDATA[(no documentation provided)]]>
+            </parameter>
+            <result xmlTypeName="user" xmlTypeNamespace="" xmlTypeSchemaId="ns0">
+              <![CDATA[(no documentation provided)]]>
+            </result>
+            <fault name="UserExistsException">
+              <![CDATA[(no documentation provided)]]>
+            </fault>
+          </method>
+          <method name="removeUser" oneWay="false">
+            <parameter name="arg0" input="true" output="false" xmlTypeName="string" xmlTypeNamespace="http://www.w3.org/2001/XMLSchema">
+              <![CDATA[(no documentation provided)]]>
+            </parameter>
+          </method>
+        </endpointInterface>
+        <facets>
+        </facets>
+      </wsdl>
+    </wsdls>
+  </soap>
+  <rest baseAddress="http://localhost:8080/SampleServices" wadl="application.wadl">
+    <resources>
+      <resource name="/users" subcontext="/api">
+        <facets>
+          <facet>
+            <name>org.codehaus.enunciate.contract.jaxrs.Resource</name>
+            <value>UserService</value>
+            <documentation><![CDATA[]]></documentation>
+          </facet>
+        </facets>
+        <additionalHeaderLabels>
+        </additionalHeaderLabels>
+        <operation name="GET">
+          <contentType type="*/*" consumable="true" produceable="true"/>
+          <contentType type="application/xml" consumable="true" produceable="true"/>
+          <contentType type="application/json" consumable="true" produceable="true"/>
+          <outValue>
+            
+            
+            <documentation><![CDATA[(no documentation provided)]]></documentation>
+          </outValue>
+        </operation>
+        <additionalHeaderLabels>
+        </additionalHeaderLabels>
+        <operation name="POST">
+            <customParameterName>arg0</customParameterName>
+          <contentType type="*/*" consumable="true" produceable="true"/>
+          <contentType type="application/xml" consumable="true" produceable="true"/>
+          <contentType type="application/json" consumable="true" produceable="true"/>
+          <inValue>
+            <xmlElement elementSchemaId="ns0" elementNamespace="" elementName="user" />
+            
+            <documentation><![CDATA[(no documentation provided)]]></documentation>
+          </inValue>
+          <outValue>
+            <xmlElement elementSchemaId="ns0" elementNamespace="" elementName="user" />
+            
+            <documentation><![CDATA[(no documentation provided)]]></documentation>
+          </outValue>
+        </operation>
+        <additionalHeaderLabels>
+        </additionalHeaderLabels>
+        <operation name="DELETE">
+            <customParameterName>arg0</customParameterName>
+          <contentType type="*/*" consumable="true" produceable="true"/>
+          <contentType type="application/xml" consumable="true" produceable="true"/>
+          <contentType type="application/json" consumable="true" produceable="true"/>
+          <inValue>
+            
+            
+            <documentation><![CDATA[(no documentation provided)]]></documentation>
+          </inValue>
+        </operation>
+      </resource>
+      <resource name="/users/{id}" subcontext="/api">
+        <facets>
+          <facet>
+            <name>org.codehaus.enunciate.contract.jaxrs.Resource</name>
+            <value>UserService</value>
+            <documentation><![CDATA[]]></documentation>
+          </facet>
+        </facets>
+        <additionalHeaderLabels>
+        </additionalHeaderLabels>
+        <operation name="GET">
+          <contentType type="*/*" consumable="true" produceable="true"/>
+          <contentType type="application/xml" consumable="true" produceable="true"/>
+          <contentType type="application/json" consumable="true" produceable="true"/>
+          <parameter name="id" type="path" xmlTypeName="string" xmlTypeNamespace="http://www.w3.org/2001/XMLSchema">
+            <![CDATA[(no documentation provided)]]>
+          </parameter>
+          <outValue>
+            <xmlElement elementSchemaId="ns0" elementNamespace="" elementName="user" />
+            
+            <documentation><![CDATA[(no documentation provided)]]></documentation>
+          </outValue>
+        </operation>
+      </resource>
+    </resources>
+    <facets>
+      <facet>
+        <name>org.codehaus.enunciate.contract.jaxrs.Resource</name>
+        <value>UserService</value>
+        <documentation><![CDATA[]]></documentation>
+      </facet>
+    </facets>
+  </rest>
+  <packages>
+    <package id="org.appfuse.core">
+    </package>
+  </packages>
+</api-docs>

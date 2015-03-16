@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://service.appfuse.org/" xmlns:ns1="http://service.appfuse.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema targetNamespace="http://service.appfuse.org/">
+      <xs:import schemaLocation="ns0.xsd"/>
+      <xs:element name="UserExistsException" type="ns1:UserExistsException"/>
+      <xs:complexType name="UserExistsException">
+        <xs:sequence>
+          <xs:element name="message" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="getUser" type="ns1:getUser"/>
+      <xs:complexType name="getUser">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[doc/lit request wrapper for operation "getUser".]]>
+          </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="arg0" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation/>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="getUserByUsername" type="ns1:getUserByUsername"/>
+      <xs:complexType name="getUserByUsername">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[doc/lit request wrapper for operation "getUserByUsername".]]>
+          </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="arg0" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation/>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="getUserByUsernameResponse" type="ns1:getUserByUsernameResponse"/>
+      <xs:complexType name="getUserByUsernameResponse">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[doc/lit response wrapper for operation "getUserByUsername".]]>
+          </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="return" type="user" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation/>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="getUserResponse" type="ns1:getUserResponse"/>
+      <xs:complexType name="getUserResponse">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[doc/lit response wrapper for operation "getUser".]]>
+          </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="return" type="user" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation/>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="getUsers" type="ns1:getUsers"/>
+      <xs:complexType name="getUsers">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[doc/lit request wrapper for operation "getUsers".]]>
+          </xs:documentation>
+        </xs:annotation>
+        <xs:sequence/>
+      </xs:complexType>
+      <xs:element name="getUsersResponse" type="ns1:getUsersResponse"/>
+      <xs:complexType name="getUsersResponse">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[doc/lit response wrapper for operation "getUsers".]]>
+          </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="return" type="user" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation/>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="removeUser" type="ns1:removeUser"/>
+      <xs:complexType name="removeUser">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[doc/lit request wrapper for operation "removeUser".]]>
+          </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="arg0" type="xs:string" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation/>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="removeUserResponse" type="ns1:removeUserResponse"/>
+      <xs:complexType name="removeUserResponse">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[doc/lit response wrapper for operation "removeUser".]]>
+          </xs:documentation>
+        </xs:annotation>
+        <xs:sequence/>
+      </xs:complexType>
+      <xs:element name="saveUser" type="ns1:saveUser"/>
+      <xs:complexType name="saveUser">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[doc/lit request wrapper for operation "saveUser".]]>
+          </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="arg0" type="user" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation/>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="saveUserResponse" type="ns1:saveUserResponse"/>
+      <xs:complexType name="saveUserResponse">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[doc/lit response wrapper for operation "saveUser".]]>
+          </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="return" type="user" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation/>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="UserService.getUser">
+    <wsdl:documentation>
+      <![CDATA[request message for operation "getUser".]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="ns1:getUser"/>
+  </wsdl:message>
+  <wsdl:message name="UserService.getUserResponse">
+    <wsdl:documentation>
+      <![CDATA[response message for operation "getUser".]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="ns1:getUserResponse"/>
+  </wsdl:message>
+  <wsdl:message name="UserService.getUserByUsername">
+    <wsdl:documentation>
+      <![CDATA[request message for operation "getUserByUsername".]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="ns1:getUserByUsername"/>
+  </wsdl:message>
+  <wsdl:message name="UserService.getUserByUsernameResponse">
+    <wsdl:documentation>
+      <![CDATA[response message for operation "getUserByUsername".]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="ns1:getUserByUsernameResponse"/>
+  </wsdl:message>
+  <wsdl:message name="UserService.getUsers">
+    <wsdl:documentation>
+      <![CDATA[request message for operation "getUsers".]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="ns1:getUsers"/>
+  </wsdl:message>
+  <wsdl:message name="UserService.getUsersResponse">
+    <wsdl:documentation>
+      <![CDATA[response message for operation "getUsers".]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="ns1:getUsersResponse"/>
+  </wsdl:message>
+  <wsdl:message name="UserService.saveUser">
+    <wsdl:documentation>
+      <![CDATA[request message for operation "saveUser".]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="ns1:saveUser"/>
+  </wsdl:message>
+  <wsdl:message name="UserService.saveUserResponse">
+    <wsdl:documentation>
+      <![CDATA[response message for operation "saveUser".]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="ns1:saveUserResponse"/>
+  </wsdl:message>
+  <wsdl:message name="UserExistsException">
+    <wsdl:part name="UserExistsException" element="ns1:UserExistsException"/>
+  </wsdl:message>
+  <wsdl:message name="UserService.removeUser">
+    <wsdl:documentation>
+      <![CDATA[request message for operation "removeUser".]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="ns1:removeUser"/>
+  </wsdl:message>
+  <wsdl:message name="UserService.removeUserResponse">
+    <wsdl:documentation>
+      <![CDATA[response message for operation "removeUser".]]>
+    </wsdl:documentation>
+    <wsdl:part name="parameters" element="ns1:removeUserResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="UserService">
+    <wsdl:operation name="getUser">
+      <wsdl:input message="ns1:UserService.getUser"/>
+      <wsdl:output message="ns1:UserService.getUserResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="getUserByUsername">
+      <wsdl:input message="ns1:UserService.getUserByUsername"/>
+      <wsdl:output message="ns1:UserService.getUserByUsernameResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="getUsers">
+      <wsdl:input message="ns1:UserService.getUsers"/>
+      <wsdl:output message="ns1:UserService.getUsersResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="saveUser">
+      <wsdl:input message="ns1:UserService.saveUser"/>
+      <wsdl:output message="ns1:UserService.saveUserResponse"/>
+      <wsdl:fault name="UserExistsException" message="ns1:UserExistsException"/>
+    </wsdl:operation>
+    <wsdl:operation name="removeUser">
+      <wsdl:input message="ns1:UserService.removeUser"/>
+      <wsdl:output message="ns1:UserService.removeUserResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="UserServicePortBinding" type="ns1:UserService">
+    <wsdl:documentation>
+      <![CDATA[SOAP Binding for UserService]]>
+    </wsdl:documentation>
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="getUser">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUserByUsername">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUsers">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="saveUser">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="UserExistsException">
+        <soap:fault name="UserExistsException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="removeUser">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="UserService">
+    <wsdl:port name="UserServicePort" binding="ns1:UserServicePortBinding">
+      <soap:address location="http://localhost:8080/SampleServices/services/UserService"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

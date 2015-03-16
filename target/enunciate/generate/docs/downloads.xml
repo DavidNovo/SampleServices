@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<downloads>
+  <download name="Java Client Library">
+    <created>Mar 16, 2015 1:18:40 PM</created>
+    <platform>Java (Version 5+)</platform>
+    <files>
+      <file name="SampleServices-client.jar" size="17.28K"><![CDATA[The binaries for the Java client library.]]></file>
+      <file name="SampleServices-client-sources.jar" size="10.95K"><![CDATA[The sources for the Java client library.]]></file>
+    </files>
+    <description><![CDATA[<h1>
+  Introduction
+</h1>
+
+<p>
+  The Java client-side library is used to access the Web service API for this application.
+</p>
+
+<p>
+  The Java client-side uses <a href="https://jax-ws.dev.java.net/">JAX-WS</a> to access the SOAP API
+  for this application.
+</p>
+
+<h1>
+    JAX-WS Example
+</h1>
+
+<code class="prettyprint">
+// instantiate a new service with an impl
+// (or through dependency injection, or whatever)...
+UserService service = new UserService();
+
+//make the remote call to read the result...
+result = service.getUser(arg0);
+
+//handle the result as needed...
+</code>
+<p>
+  The JAX-WS client-side library is used to provide the set of Java objects that can be serialized
+  to/from XML using <a href="https://jaxb.dev.java.net/">JAXB</a>.  This is useful for accessing the
+  REST endpoints that are published by this application.
+</p>
+
+<h1>
+  REST Example (Raw JAXB)
+</h1>
+
+<code class="prettyprint">
+java.net.URL url = new java.net.URL(baseURL + "/users");
+JAXBContext context = JAXBContext.newInstance( User.class, User.class );
+java.net.URLConnection connection = url.openConnection();
+connection.setDoOutput(true);
+connection.connect();
+
+Unmarshaller unmarshaller = context.createUnmarshaller();
+Marshaller marshaller = context.createMarshaller();
+marshaller.marshal(user, connection.getOutputStream());
+User result = (User) unmarshaller.unmarshal( connection.getInputStream() );
+//handle the result as needed...
+</code>
+
+<h1>
+  REST Example (Jersey client)
+</h1>
+
+<code class="prettyprint">
+com.sun.jersey.api.client.Client client = com.sun.jersey.api.client.Client.create();
+
+User result = client.resource(baseUrl + "/users")
+  .entity(user)
+  .post(User.class);
+
+//handle the result as needed...
+</code>
+]]></description>
+    <dependencies>
+    </dependencies>
+  </download>
+  <download name="Java JSON Client Library">
+    <created>Mar 16, 2015 1:18:40 PM</created>
+    <platform>Java (Version 5+)</platform>
+    <files>
+      <file name="SampleServices-json-client.jar" size="3.38K"><![CDATA[The binaries for the Java JSON client library.]]></file>
+      <file name="SampleServices-json-client-sources.jar" size="2.46K"><![CDATA[The sources for the Java JSON client library.]]></file>
+    </files>
+    <description><![CDATA[<h1>
+  Introduction
+</h1>
+
+<p>
+  The Java client-side library is used to provide the set of Java objects that can be serialized
+  to/from JSON using <a href="http://jackson.codehaus.org/">Jackson</a>.  This is useful for accessing the
+  JSON REST endpoints that are published by this application.
+</p>
+
+<h1>
+  REST Example (Raw Jackson)
+</h1>
+
+<code class="prettyprint">
+java.net.URL url = new java.net.URL(baseURL + "/users");
+ObjectMapper mapper = new ObjectMapper();
+java.net.URLConnection connection = url.openConnection();
+connection.setDoOutput(true);
+connection.connect();
+
+mapper.writeValue(connection.getOutputStream(), user);
+User result = (User) mapper.readValue( connection.getInputStream(), User.class );
+//handle the result as needed...
+</code>
+
+]]></description>
+    <dependencies>
+    </dependencies>
+  </download>
+  <download name="PHP Client Library">
+    <created>Mar 16, 2015 1:18:36 PM</created>
+    <platform>PHP</platform>
+    <files>
+      <file name="SampleServices.php" size="14.96K"><![CDATA[]]></file>
+    </files>
+    <description><![CDATA[<h1>
+  Introduction
+</h1>
+
+<p>
+  The PHP client-side library defines the PHP classes that can be (de)serialized to/from JSON.
+  This is useful for accessing the REST endpoints that are published by this application, but only
+  those that produce a JSON representation of their resources (content type "application/json").
+</p>
+
+<p>
+  This library requires the <a href="http://php.net/manual/en/function.json-encode.php">json_encode</a> function which was included in PHP versions 5.2.0+.
+</p>]]></description>
+    <dependencies>
+    </dependencies>
+  </download>
+  <download name="Ruby Client Library">
+    <created>Mar 16, 2015 1:18:36 PM</created>
+    <platform>Ruby</platform>
+    <files>
+      <file name="SampleServices.rb" size="7.91K"><![CDATA[]]></file>
+    </files>
+    <description><![CDATA[<h1>
+  Introduction
+</h1>
+
+<p>
+  The Ruby client-side library defines the Ruby classes that can be (de)serialized to/from JSON.
+  This is useful for accessing the REST endpoints that are published by this application, but only
+  those that produce a JSON representation of their resources (content type "application/json").
+</p>
+
+<p>
+  This library leverages the <a href="http://json.rubyforge.org/">Ruby JSON Implementation</a>, which is
+  required in order to use this library.
+</p>
+
+<h1>
+  JSON REST Example
+</h1>
+
+<code class="prettyprint">
+require 'net/https'
+require 'uri'
+//...
+
+//read a resource from a REST url
+url = URI.parse("...")
+request = Net::HTTP::Post.new(url.request_uri)
+input = User.new
+//set up the User...
+request.body = input.to_json
+request['Content-Type'] = "application/json"
+
+http = Net::HTTP.new(url.host, url.port)
+//set up additional http stuff...
+res = http.start do |ht|
+  ht.request(request)
+end
+
+result = User.from_json(JSON.parse(res.body))
+
+//handle the result as needed...
+</code>
+]]></description>
+    <dependencies>
+    </dependencies>
+  </download>
+</downloads>

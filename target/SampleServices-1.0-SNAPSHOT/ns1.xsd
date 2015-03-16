@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema version="1.0" targetNamespace="http://service.appfuse.org/" xmlns:ns1="http://service.appfuse.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="ns0.xsd"/>
+  <xs:element name="UserExistsException" type="ns1:UserExistsException"/>
+  <xs:complexType name="UserExistsException">
+    <xs:sequence>
+      <xs:element name="message" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="getUser" type="ns1:getUser"/>
+  <xs:complexType name="getUser">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[doc/lit request wrapper for operation "getUser".]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation/>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="getUserByUsername" type="ns1:getUserByUsername"/>
+  <xs:complexType name="getUserByUsername">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[doc/lit request wrapper for operation "getUserByUsername".]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation/>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="getUserByUsernameResponse" type="ns1:getUserByUsernameResponse"/>
+  <xs:complexType name="getUserByUsernameResponse">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[doc/lit response wrapper for operation "getUserByUsername".]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="return" type="user" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation/>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="getUserResponse" type="ns1:getUserResponse"/>
+  <xs:complexType name="getUserResponse">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[doc/lit response wrapper for operation "getUser".]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="return" type="user" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation/>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="getUsers" type="ns1:getUsers"/>
+  <xs:complexType name="getUsers">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[doc/lit request wrapper for operation "getUsers".]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence/>
+  </xs:complexType>
+  <xs:element name="getUsersResponse" type="ns1:getUsersResponse"/>
+  <xs:complexType name="getUsersResponse">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[doc/lit response wrapper for operation "getUsers".]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="return" type="user" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation/>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="removeUser" type="ns1:removeUser"/>
+  <xs:complexType name="removeUser">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[doc/lit request wrapper for operation "removeUser".]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation/>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="removeUserResponse" type="ns1:removeUserResponse"/>
+  <xs:complexType name="removeUserResponse">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[doc/lit response wrapper for operation "removeUser".]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence/>
+  </xs:complexType>
+  <xs:element name="saveUser" type="ns1:saveUser"/>
+  <xs:complexType name="saveUser">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[doc/lit request wrapper for operation "saveUser".]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="arg0" type="user" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation/>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="saveUserResponse" type="ns1:saveUserResponse"/>
+  <xs:complexType name="saveUserResponse">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[doc/lit response wrapper for operation "saveUser".]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="return" type="user" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation/>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
